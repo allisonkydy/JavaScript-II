@@ -67,6 +67,15 @@ contains('Gum', items, result => console.log(result));
 
 function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
+  // Pass the duplicate-free array to the callback function.
   // Do not mutate the original array.
+  let noDupes = [];
+  array.slice().forEach((element, index, array) => {
+    if (index === array.lastIndexOf(element)) noDupes.push(element);
+    else array.slice(index, 1);
+  })
+  return cb(noDupes);
 }
+
+const colors = ['green', 'blue', 'yellow', 'orange', 'blue', 'green', 'indigo', 'green', 'violet', 'red', 'blue'];
+removeDuplicates(colors, result => console.log(result));
