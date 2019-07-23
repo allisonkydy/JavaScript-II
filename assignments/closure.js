@@ -1,5 +1,19 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function beehive() {
+  let buzz = [];
+
+  function bee() {
+    buzz.push('buzz');
+    console.log(buzz.join(''));
+  }
+  return bee;
+}
+
+let buzzBee = beehive();
+buzzBee();
+buzzBee();
+buzzBee();
 
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
